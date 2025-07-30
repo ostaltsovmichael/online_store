@@ -1,0 +1,10 @@
+dependens: "DEV"
+host: "localhost"
+port: 8000
+
+postgres_url: "user=postgres password=6362 dbname=online_store sslmode=disable"
+
+sqlite_path: "./static/online_shop.db"
+langl_zone: "RU"
+
+secret_jwt_key: "qwerrrewqq"

@@ -1,0 +1,10 @@
+-- database: ./online_shop.db
+
+SELECT (devices.id),(devices.name), price, ratind, img,(brands.name),(types.name) 
+FROM devices  
+RIGHT JOIN brands ON (devices.brandid) = (brands.id) 
+RIGHT JOIN types ON (devices.typeid) = (types.id)   WHERE (devices.id) = 5;
+
+
+
+
