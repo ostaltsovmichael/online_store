@@ -10,6 +10,13 @@ import (
 
 var db = databases.DB()
 
+// @Summary Создать девайс
+// @Description Создать девайс
+// @Tags device
+// @Accept json
+// @Produce json
+// @Success 200 {object} Device
+// @Router /devices/[post]
 func (d *Device) CreateDevice() (*sql.Stmt, error) {
 
 	device, err := db.Prepare(`INSERT INTO devices (name, price, img, typeid,brandid) VALUES ($1, $2, $3, $4, $5)`)

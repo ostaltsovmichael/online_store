@@ -1,15 +1,17 @@
 package routers
 
-import "online_shop/internal/handlers"
+import (
+	"online_shop/internal/handlers"
 
-func DeviceRouter() {
+	"github.com/go-chi/chi/v5"
+)
 
-	router := Router
+func DeviceRouter(r chi.Router) {
 
-	router.Post("/devices", handlers.CreateDevice)
-	router.Post("/device_infos", handlers.CreateDiviceInfo)
+	r.Post("/", handlers.CreateDevice)
+	r.Post("/device_infos", handlers.CreateDiviceInfo)
 
-	router.Get("/devices/{id}", handlers.GetDeviceByID)
-	router.Get("/devices/type/brand/{id}", handlers.GetDeviceBrandTypeByIdDevice)
+	r.Get("/{id}", handlers.GetDeviceByID)
+	r.Get("/type/brand/{id}", handlers.GetDeviceBrandTypeByIdDevice)
 
 }

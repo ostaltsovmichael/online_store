@@ -1,12 +1,14 @@
 package routers
 
-import "online_shop/internal/handlers"
+import (
+	"online_shop/internal/handlers"
 
-func TypeRouter() {
+	"github.com/go-chi/chi/v5"
+)
 
-	router := Router
+func TypeRouter(r chi.Router) {
 
-	router.Post("/types", handlers.CreateType)
-	router.Get("/types/{id}", handlers.GetTypeById)
+	r.Post("/", handlers.CreateType)
+	r.Get("/{id}", handlers.GetTypeById)
 
 }

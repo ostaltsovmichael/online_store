@@ -1,11 +1,11 @@
 package routers
 
-import "online_shop/internal/handlers"
+import (
+	"online_shop/internal/handlers"
 
-func BrandRouter() {
+	"github.com/go-chi/chi/v5"
+)
 
-	router := Router
-
-	router.Post("/brands", handlers.CreateBrand)
-
+func BrandRouter(r chi.Router) {
+	r.Post("/", handlers.CreateBrand)
 }
